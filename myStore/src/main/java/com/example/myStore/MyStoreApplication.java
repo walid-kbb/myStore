@@ -8,13 +8,16 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.example.myStore.dao.AdminRepository;
+import com.example.myStore.dao.MarqueTelRepository;
 import com.example.myStore.entities.Admin;
+import com.example.myStore.entities.MarqueTel;
 
 @SpringBootApplication
 public class MyStoreApplication implements CommandLineRunner {
 	@Autowired
 	AdminRepository adminRepository;
-	
+	@Autowired
+	MarqueTelRepository marqueTelRepository;
 	public static void main(String[] args) {
 		SpringApplication.run(MyStoreApplication.class, args);
 	}
@@ -46,6 +49,11 @@ public class MyStoreApplication implements CommandLineRunner {
         
 		Admin admin = new Admin("admin",password);
 		adminRepository.save(admin);
+		
+		
+		MarqueTel marque =  new MarqueTel("marque1", null);
+		System.out.println(marque);
+		marqueTelRepository.save(marque);
 		
 	}
 

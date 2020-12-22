@@ -19,9 +19,8 @@ public class MarqueTel {
 	}
 	
 	
-	public MarqueTel(long id, String marque, List<ModeleTel> modeles) {
+	public MarqueTel(String marque, List<ModeleTel> modeles) {
 		super();
-		this.id = id;
 		this.marque = marque;
 		this.modeles = modeles;
 	}
