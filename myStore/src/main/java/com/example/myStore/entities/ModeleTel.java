@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class ModeleTel {
 
@@ -16,15 +18,12 @@ public class ModeleTel {
 	
 	
 	
-	public ModeleTel(long id, String modele, MarqueTel marque, float prix, String description,
-			Caracteristiques caracterstiques) {
+	public ModeleTel(String modele, float prix, String description) {
 		super();
-		this.id = id;
 		this.modele = modele;
-		this.marque = marque;
 		this.prix = prix;
 		this.description = description;
-		this.caracteristiques = caracterstiques;
+		
 	}
 
 
@@ -62,6 +61,7 @@ public class ModeleTel {
 
 
 	@ManyToOne
+	@JsonIgnore
 	public MarqueTel getMarque() {
 		return marque;
 	}

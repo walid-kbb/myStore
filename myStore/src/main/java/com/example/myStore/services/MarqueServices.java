@@ -19,7 +19,7 @@ import com.example.myStore.dao.MarqueTelRepository;
 import com.example.myStore.entities.MarqueTel;
 
 @RestController
-public class TelephonesServices {
+public class MarqueServices {
 	
 	@Autowired
 	MarqueTelRepository marqueTelRepository;
