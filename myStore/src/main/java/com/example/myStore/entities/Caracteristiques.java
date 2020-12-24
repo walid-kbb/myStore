@@ -4,7 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Caracteristiques {
@@ -15,13 +18,12 @@ public class Caracteristiques {
 	
 	
 	
-	public Caracteristiques(long id, ModeleTel telephone, int poids, float taille, String os) {
+	public Caracteristiques( int poids, float taille, String os) {
 		super();
-		this.id = id;
-		this.telephone = telephone;
+		
 		this.poids = poids;
 		this.taille = taille;
-		Os = os;
+		this.Os = os;
 	}
 
 
@@ -46,6 +48,8 @@ public class Caracteristiques {
 
 
 	@OneToOne
+	@JoinColumn(name="modele_id")
+	@JsonIgnore
 	public ModeleTel getTelephone() {
 		return telephone;
 	}
