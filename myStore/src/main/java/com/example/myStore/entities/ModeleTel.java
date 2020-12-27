@@ -31,6 +31,7 @@ public class ModeleTel {
 	private long id;
 	private String modele;
 	private MarqueTel marque;
+	private String MarqueName;
 	private float prix;
 	private String description;
 	private Caracteristiques caracteristiques;
@@ -106,6 +107,18 @@ public class ModeleTel {
 
 	public void setCaracteristiques(Caracteristiques caracterstiques) {
 		this.caracteristiques = caracterstiques;
+	}
+
+
+
+	public String getMarqueName() {
+		return MarqueName;
+	}
+
+
+
+	public void setMarqueName(String marqueName) {
+		MarqueName = marqueName;
 	}
 
 

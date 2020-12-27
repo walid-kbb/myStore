@@ -3,6 +3,7 @@ package com.example.myStore.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +16,7 @@ import com.example.myStore.dao.MarqueTelRepository;
 import com.example.myStore.dao.ModeleTelRepository;
 import com.example.myStore.entities.MarqueTel;
 import com.example.myStore.entities.ModeleTel;
-
+@CrossOrigin(origins = "*")
 @RestController
 public class ModeleServices {
 
@@ -34,6 +35,7 @@ public class ModeleServices {
 	@PostMapping("/marques/{marqueId}")
 	public ModeleTel addModele (@PathVariable long marqueId,@RequestBody ModeleTel modeletel) {
 		ModeleTel modele = new ModeleTel();
+		modele.setMarqueName(marqueTelRepository.findById(marqueId).get().getMarque());
 		modele.setDescription(modeletel.getDescription());
 		modele.setModele(modeletel.getModele());
 		modele.setPrix(modeletel.getPrix());
