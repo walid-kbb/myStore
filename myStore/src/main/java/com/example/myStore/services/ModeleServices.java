@@ -66,4 +66,14 @@ public class ModeleServices {
 		modelTelRepository.deleteById(modeleId);
 	}
 	
+	@GetMapping("/findmodeles/{modele}")
+	public List<ModeleTel> findByName (@PathVariable("modele") String modele ){
+		return modelTelRepository.findByName(modele.toLowerCase());
+	}
+	
+	@GetMapping("/findlikemodeles/{modele}")
+	public List<ModeleTel> findByNameLike (@PathVariable("modele") String modele){
+		return modelTelRepository.findByNameLike(modele.toLowerCase());
+	}
+	
 }

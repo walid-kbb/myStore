@@ -34,17 +34,17 @@ public class MarqueServices {
 		}
 	
 		@PostMapping("/addMarque")
-		public void addMarque (@RequestBody String nomMarque) {
+		public void addMarque (@RequestBody MarqueTel marque) {
 			
-			MarqueTel marque =  new MarqueTel(nomMarque, null);
-			System.out.println(marque);
-			marqueTelRepository.save(marque);
+			MarqueTel newMarque =  new MarqueTel(marque.getMarque(), null);
+			System.out.println(newMarque);
+			marqueTelRepository.save(newMarque);
 		}
 		
 		@PutMapping("/updateMarque/{id}")
-		public void updateMarque (@PathVariable long id ,@RequestBody String marque) {
+		public void updateMarque (@PathVariable long id ,@RequestBody MarqueTel marque) {
 			MarqueTel updatedMarque =marqueTelRepository.findById(id).get();
-			updatedMarque.setMarque(marque);
+			updatedMarque.setMarque(marque.getMarque());
 			marqueTelRepository.save(updatedMarque);
 		}
 		
