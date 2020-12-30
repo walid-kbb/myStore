@@ -37,7 +37,7 @@ export class AddModeleComponent implements OnInit {
       error => console.log(error)
     );
   this.modele = new ModeleTel();
-  this.router.navigate(['/all-mobiles'])
+  this.router.navigate(['/gestion-modeles'])
     .then(() => {
       window.location.reload();
     });
