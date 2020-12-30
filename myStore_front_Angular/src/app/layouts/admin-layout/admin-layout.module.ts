@@ -12,7 +12,8 @@ import { UpdateMobileComponent } from '../../update-mobile/update-mobile.compone
 import { UpdateMarqueComponent } from '../../update-marque/update-marque.component';
 import { GestionMarquesComponent } from '../../gestion-marques/gestion-marques.component';
 import { FindModelesComponent } from '../../find-modeles/find-modeles.component';
-
+import { AuthentificationComponent } from '../../authentification/authentification.component';
+import { UpdatePasswordComponent } from '../../update-password/update-password.component';
 import {
   MatButtonModule,
   MatInputModule,
@@ -43,7 +44,9 @@ import {
     UpdateMobileComponent,
     UpdateMarqueComponent,
     GestionMarquesComponent,
-    FindModelesComponent
+    FindModelesComponent,
+    AuthentificationComponent,
+    UpdatePasswordComponent
   ]
 })
 

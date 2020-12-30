@@ -8,6 +8,8 @@ import {UpdateMobileComponent} from 'app/update-mobile/update-mobile.component';
 import {UpdateMarqueComponent} from 'app/update-marque/update-marque.component';
 import {GestionMarquesComponent} from 'app/gestion-marques/gestion-marques.component';
 import{FindModelesComponent} from 'app/find-modeles/find-modeles.component';
+import {AuthentificationComponent} from 'app/authentification/authentification.component';
+import {UpdatePasswordComponent} from 'app/update-password/update-password.component';
 
 export const AdminLayoutRoutes: Routes = [
 
@@ -20,5 +22,8 @@ export const AdminLayoutRoutes: Routes = [
     { path : 'update-modele', component:UpdateMobileComponent},
     { path : 'update-marque', component:UpdateMarqueComponent},
     { path : 'gestion-marques', component:GestionMarquesComponent},
+    { path : 'auth' , component:AuthentificationComponent},
+    { path : 'change-pwd' , component:UpdatePasswordComponent},
+    
     
 ];

@@ -9,8 +9,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.example.myStore.dao.AdminRepository;
 import com.example.myStore.dao.MarqueTelRepository;
+import com.example.myStore.dao.ModeleTelRepository;
 import com.example.myStore.entities.Admin;
 import com.example.myStore.entities.MarqueTel;
+import com.example.myStore.entities.ModeleTel;
 
 @SpringBootApplication
 public class MyStoreApplication implements CommandLineRunner {
@@ -18,6 +20,8 @@ public class MyStoreApplication implements CommandLineRunner {
 	AdminRepository adminRepository;
 	@Autowired
 	MarqueTelRepository marqueTelRepository;
+	@Autowired
+	ModeleTelRepository modeleTelRepository;
 	public static void main(String[] args) {
 		SpringApplication.run(MyStoreApplication.class, args);
 	}
@@ -51,9 +55,27 @@ public class MyStoreApplication implements CommandLineRunner {
 		adminRepository.save(admin);
 		
 		
-		MarqueTel marque =  new MarqueTel("marque1", null);
+		MarqueTel marque =  new MarqueTel("Samsung", null);
 		System.out.println(marque);
 		marqueTelRepository.save(marque);
+		
+		MarqueTel marque2 =  new MarqueTel("Apple", null);
+		System.out.println(marque2);
+		marqueTelRepository.save(marque2);
+		
+		ModeleTel modele1 = new ModeleTel("Galaxy Note 20 Ultra",811,"description");
+		marque=marqueTelRepository.findById(marque.getId()).get();
+		marque.getModeles().add(modele1);
+		modele1.setMarque(marque);
+		modele1.setMarqueName(marque.getMarque());
+		marqueTelRepository.save(marque);
+		
+		ModeleTel modele2 = new ModeleTel("iPhone 12 Pro Max",751,"description");
+		marque2=marqueTelRepository.findById(marque2.getId()).get();
+		marque2.getModeles().add(modele2);
+		modele2.setMarque(marque2);
+		modele2.setMarqueName(marque2.getMarque());
+		marqueTelRepository.save(marque2);
 		
 	}
 

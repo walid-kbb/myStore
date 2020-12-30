@@ -7,10 +7,11 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 const routes: Routes =[
     
 
-    {path: '',redirectTo: 'all-mobiles', pathMatch: 'full'},
+    {path: '',redirectTo: 'auth', pathMatch: 'full'},
     {path: '',component: AdminLayoutComponent,children: [{path: '',loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
     }]
-  }
+  },
+
 ];
 
 @NgModule({

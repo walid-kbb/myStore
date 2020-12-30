@@ -1,0 +1,32 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3"></div>
+          <div class="col-md-5">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Admin autentification</h4>
+                      <p class="card-category"> Mot de passe uniquement ("admin" par defaut).  </p>
+                  </div>
+                  <div class="card-body">
+                          <form (ngSubmit)="onSubmit()">
+                          <div class="row">
+                              <div class="col-md-4">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="admin" id="admin" required name="admin" disabled>
+                                </mat-form-field>
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="mot de passe" id="password" required [(ngModel)]="password" name="password" type="password">
+                                  </mat-form-field>
+                              </div>
+                            </div>
+                         
+                          <button mat-raised-button type="submit" class="btn btn-danger pull-right">Se connecter</button>
+                          <div class="clearfix"></div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

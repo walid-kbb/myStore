@@ -3,11 +3,15 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {MarqueTel} from '../MarqueTel';
 import { ModeleTel } from '../ModeleTel';
+import { Admin } from 'app/Admin';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MyStoreService {
+
+  //admin
+  private url_admin = "http://localhost:8080/admin";
   //marques
   private url_get_brands = "http://localhost:8080/marques";
   private url_add_marque = "http://localhost:8080/addMarque";
@@ -22,7 +26,17 @@ export class MyStoreService {
   private url_findLike_modele ="http://localhost:8080/findlikemodeles/";
 
   constructor(private http: HttpClient) { }
-  
+
+    // admin
+
+    getAdmin(): Observable<Admin>{
+      return this.http.get<Admin>(this.url_admin);
+    }
+
+    updateAdminPassword(admin : string): Observable<string>{
+      return this.http.put<string>(this.url_admin,admin);
+    }
+
     // Marques
 
     getMarquesList(): Observable<MarqueTel[]> {
