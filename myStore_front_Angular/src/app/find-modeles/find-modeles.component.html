@@ -1,0 +1,102 @@
+<div class="main-content">
+  <div [hidden]="submitted" class="container-fluid">
+      <div class="row">
+        <div class="col-md-3"></div>
+          <div class="col-md-5">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Recherche un modele téléphone</h4>
+                      <p class="card-category"><!-- ktiba khfifa-->  </p>
+                  </div>
+                  <div class="card-body">
+                          <form>
+                          <div class="row">
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Nom" id="nom" required [(ngModel)]="nom" name="nom">
+                                  </mat-form-field>
+                              </div>
+                            </div>
+                            
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                  <input class="form-check-input" type="checkbox" [(ngModel)]="checked" 
+                                  [ngModelOptions]="{standalone : true}"/>
+                                  Recherche nom complet 
+                                  <span class="form-check-sign">
+                                      <span class="check"></span>
+                                  </span>
+                              </label>
+                            </div>
+                          
+                      <button mat-raised-button (click)="findByName()" type="submit"  class="btn btn-danger pull-right">Rechercher</button>
+
+                      </form>
+
+                  </div>
+                  
+             </div>
+          </div>
+      </div>
+  </div>
+
+  <div [hidden]="!submitted" class="container-fluid">
+   
+    <div class="row">
+      <div class="col-lg-2 col-md-2"> </div>
+        <div class="col-lg-8 col-md-12">
+            <div class="card">
+                <div class="card-header card-header-warning">
+                    <h4 class="card-title">Les modeles téléphones disponible </h4>
+                    <p class="card-category"></p>
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table table-hover">
+                        <thead class="text-warning">
+                          <th>
+                            Marque
+                         </th>
+                         <th>
+                             Modéle
+                         </th>
+                         <th>
+                             Description
+                         </th>
+                         <th>
+                             Prix
+                         </th>
+                          <th>
+                             Carteristiques
+                         </th>
+                            
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let modele of modeles">
+                            <td >
+                              {{modele.marqueName}}
+                           </td>
+                           <td>
+                               {{modele.modele}}
+
+                           </td>
+                           <td>
+                              {{modele.description}}
+                           </td>
+                           <td>
+                               {{modele.prix}}
+                           </td>
+                           <td>
+                             Caracteristiques
+                           </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>    
+  
+  
+
+</div>
