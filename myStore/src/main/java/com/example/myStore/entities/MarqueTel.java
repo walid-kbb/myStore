@@ -53,7 +53,7 @@ public class MarqueTel {
 		this.marque = marque;
 	}
 
-	@OneToMany(mappedBy = "marque",cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "marque",orphanRemoval = true,cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	public List<ModeleTel> getModeles() {
 		return modeles;
 	}

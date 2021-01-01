@@ -63,6 +63,7 @@ public class ModeleServices {
 	}
 	@DeleteMapping("/modeles/{modeleId}")
 	public void deleteModele(@PathVariable long modeleId) {
+		marqueTelRepository.findById(modelTelRepository.findById(modeleId).get().getMarque().getId()).get().getModeles().removeIf(m->m.getId()==modeleId);
 		modelTelRepository.deleteById(modeleId);
 	}
 	
