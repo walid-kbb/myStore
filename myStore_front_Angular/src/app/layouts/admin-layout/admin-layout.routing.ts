@@ -22,7 +22,6 @@ export const AdminLayoutRoutes: Routes = [
     { path : 'update-modele', component:UpdateMobileComponent},
     { path : 'update-marque', component:UpdateMarqueComponent},
     { path : 'gestion-marques', component:GestionMarquesComponent},
-    { path : 'auth' , component:AuthentificationComponent},
     { path : 'change-pwd' , component:UpdatePasswordComponent},
     
     
