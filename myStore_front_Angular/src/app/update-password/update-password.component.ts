@@ -43,7 +43,10 @@ export class UpdatePasswordComponent implements OnInit {
       alert("les 2 mots de passe ne se correspondent pas");
     }
   
+}
 
+deconnecter(){
+  this.router.navigate(['/auth'])
 }
 
 }
